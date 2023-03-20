@@ -1,0 +1,62 @@
+/* Style the navigation menu */
+#myLinks {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  z-index:3;
+  top:60px;
+  left:0;
+  width:100%;
+  display: none;
+}
+
+#nav-header {
+  display:flex;
+  align-items:center;
+  padding:20px;
+  color:white;
+  justify-content:space-evenly;
+}
+
+#nav-content {
+  /* Style navigation menu links */
+  a {
+    text-decoration: none;
+    font-size: 17px;
+    color: white;
+    padding: 14px 26px;
+    display:flex;
+    align-items:center;
+    gap:5px;
+
+    /* Add a grey background color on mouse-over */
+    :hover {
+      background-color: #ddd;
+      color: black;
+    }
+  
+    i {
+      font-size:1.5rem;
+    }
+  }
+}
+
+#nav-footer {
+  display:flex;
+  padding:10px;
+  justify-content:space-between;
+
+  div {
+    display:flex;
+    align-items:center;
+  }
+
+  a {
+    color: white;
+    text-decoration:none;
+  }
+
+  i {
+    font-size:1.5rem;
+  }
+}

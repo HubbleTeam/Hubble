@@ -1,0 +1,19 @@
+:root {
+  --fonts:'Montserrat', sans-serif;
+  --bg-color:null;
+  --accent-color:null;
+  --text-color-1:null;
+  --text-color-2:#FFFFFF;
+  --rounded-25: 0.75rem;
+  --rounded-50: 1.5rem;
+  --rounded-100: 9999px;
+}
+
+$fonts: var(--fonts);
+$bg-color: var(--bg-color);
+$accent-color: var(--accent-color);
+$text-color-1: var(--text-color-1);
+$text-color-2: var(--text-color-2);
+$rounded-25: var(--rounded-25);
+$rounded-50: var(--rounded-50);
+$rounded-100: var(--rounded-100);

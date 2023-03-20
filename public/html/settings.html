@@ -1,0 +1,52 @@
+<div id="settings" class="flyout">
+  <div class="flyout-header">
+    <i class="ph-duotone ph-gear-six"></i>
+    <h1>Paramètres</h1>
+    
+    <div class="flyout-close">
+      <a href="#" class="closebtn" onclick="settingsSwitch('close')">&times;</a>
+    </div>
+  </div>
+  
+  <label for="theme-select">Choose a theme:</label>
+  <select onchange="colorChange()" name="theme-select" id="theme-select">
+  </select>
+
+  <div>
+    <label for="bg-picker">Background color</label>
+    <input type="color" id="bg-picker" name="bg-picker">
+  </div>
+  
+  <div>
+    <label for="accent-picker">Accent color</label>
+    <input type="color" id="accent-picker" name="accent-picker">
+  </div>
+  
+  <div>
+    <label for="text-picker">Text color</label>
+    <input type="color" id="text-picker" name="text-picker">
+  </div>
+  
+  <label for="avatar">Choose a profile picture:</label>
+  <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+
+  <div>
+    <button>Submit</button>
+  </div>
+
+  <div>
+    <span>Mode éco</span>
+    <div class="dark-switch">
+      <div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <span>Infobulles</span>
+    <div class="dark-switch">
+      <div>
+      </div>
+    </div>
+  </div>
+</div>

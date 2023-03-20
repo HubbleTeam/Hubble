@@ -1,0 +1,42 @@
+{
+	"colorSchemes": {
+		"lightTheme": {
+      "name": "Light",
+			"bgColor": "#FFFFFF",
+			"accentColor": "#2563EB",
+			"textColor1": "#000000",
+      "textColor2": "#FFFFFF"
+		},
+		"darkTheme": {
+      "name": "Dark",
+			"bgColor": "#434343",
+			"accentColor": "#2563EB",
+			"textColor1": "#FFFFFF",
+      "textColor2": "#000000"
+		},
+    "cyberpunk": {
+      "name": "Night City",
+			"bgColor": "#1B0A24",
+			"accentColor": "#EBE300",
+			"textColor1": "#00D5FF",
+      "textColor2": "#000000"
+		},
+    "japanExpo": {
+      "name": "Kawaii",
+			"bgColor": "#FED2EC",
+			"accentColor": "#8C008F",
+			"textColor1": "#000000",
+      "textColor2": "#000000"
+		},
+    "custom": {
+      "name": "Custom",
+			"bgColor": "#000000",
+			"accentColor": "#000000",
+			"textColor": "#000000",
+      "textColor2": "#000000"
+		}
+	},
+	"theme": "darkTheme",
+	"firstRun": "false",
+  "ecoMode": "false"
+}

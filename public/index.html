@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Hubble</title>
+    <link rel="manifest" href="./app.webmanifest">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  
+  <body>
+    <div id="bg" onclick="closeAll()">
+      <div></div>
+    </div>
+    
+    <header id="header">
+      <img class="icon" id="headericon" src="./img/logotype.png">
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" class="openbtn" onclick="nav()">
+        <i class="ph ph-list"></i>
+      </a>
+    </header>
+    
+    <main>
+      <section id="timeline">
+        <div id="week-selector">
+          <i class="ph ph-caret-left" onclick="weekDecrement()"></i>
+          <span id="week-indicator"></span>
+          <i class="ph ph-caret-right" onclick="weekIncrement()"></i>
+        </div>
+        <form id="days-selector">
+          <div>
+            <input type="radio" class="day" name="day" value=0>
+            <label>LUN</label>
+            <label><b></b></label>
+          </div>
+          <div>
+            <input type="radio" class="day" name="day" value=1>
+            <label>MAR</label>
+            <label><b></b></label>
+          </div>
+          <div>
+            <input type="radio" class="day" name="day" value=2>
+            <label>MER</label>
+            <label><b></b></label>
+          </div>
+          <div>
+            <input type="radio" class="day" name="day" value=3>
+            <label>JEU</label>
+            <label><b></b></label>
+          </div>
+          <div>
+            <input type="radio" class="day" name="day" value=4>
+            <label>VEN</label>
+            <label><b></b></label>
+          </div>
+          <div>
+            <input type="radio" class="day" name="day" value=5>
+            <label>SAM</label>
+            <label><b></b></label>
+          </div>
+        </form>
+      </section>
+      
+      <section id="main-content">
+      </section>
+    </main>
+    
+    <script src="./js/sw-registerer.js"></script>
+    <script src="./js/pulltorefresh.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page 404</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: black;
+		}
+
+		video {
+			position: absolute;
+			top: 0;
+			left: 0;
+      right: 0;
+			min-width: 100%;
+			min-height: 100%;
+			z-index: -1;
+		}
+
+		h1 {
+		  font-size: 10vw;
+  font-family: Arial, sans-serif;
+  color: transparent;
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: rainbow 3s linear infinite, slide 5s linear infinite;
+  -webkit-animation: rainbow 4s ease-in-out infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes rainbow{
+  0%{
+    color:#A0D468;
+  }
+  
+  20%{
+    color:#4FC1E9;
+  }
+  
+  40%{
+    color:#FFCE54;
+  }
+  
+  60%{
+    color:#FC6E51;
+  }
+  
+  80%{
+    color:#ED5565;
+  }
+  
+  100%{
+    color:#AC92EC;
+  }
+}
+
+@-moz-keyframes rainbow{
+  0%{
+    color:#A0D468;
+  }
+  
+  20%{
+    color:#4FC1E9;
+  }
+  
+  40%{
+    color:#FFCE54;
+  }
+  
+  60%{
+    color:#FC6E51;
+  }
+  
+  80%{
+    color:#ED5565;
+  }
+  
+  100%{
+    color:#AC92EC;
+  }
+}
+
+@-webkit-keyframes rainbow{
+  0%{
+    color:#A0D468;
+  }
+  
+  20%{
+    color:#4FC1E9;
+  }
+  
+  40%{
+    color:#FFCE54;
+  }
+  
+  60%{
+    color:#FC6E51;
+  }
+  
+  80%{
+    color:#ED5565;
+  }
+  
+  100%{
+    color:#AC92EC;
+  }
+}
+
+}
+	</style>
+</head>
+<body>
+	<video autoplay loop>
+		<source src="assets/clickpa/video.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+	<h1>404</h1>
+</body>
+</html>
