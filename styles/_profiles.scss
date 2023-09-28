@@ -1,0 +1,43 @@
+#profiles {
+  background-color: #404040;
+  position: fixed;
+  top: 0;
+  width: $content-full;
+  height: $content-full;
+  z-index: 5;
+  text-align: center;
+  display: flex;
+  align-items: center;
+
+  > div {
+    display: flex;
+    padding: 10%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: $content-full;
+    max-height: $content-full;
+    overflow: auto;
+
+    h1 {
+      color: $text-color-2;
+      flex-basis: $content-full;
+    }
+
+    button {
+      flex-basis: $content-full;
+    }
+
+    div {
+      background-color: $surface-color-2;
+      border-radius: $rounded-25;
+      padding: 20px;
+      color: $text-color-2;
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+}

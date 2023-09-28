@@ -1,0 +1,50 @@
+{
+	"colorSchemes": {
+    "systemTheme": {
+      "name": "Système"
+		},
+		"lightTheme": {
+      "name": "Clair",
+			"bgColor": "#FFFFFF",
+			"accentColor": "#0069FF",
+			"textColor1": "#000000",
+      "textColor2": "#FFFFFF"
+		},
+		"darkTheme": {
+      "name": "Sombre",
+			"bgColor": "#404040",
+			"accentColor": "#0069FF",
+			"textColor1": "#F5F5F5",
+      "textColor2": "#000000"
+		},
+    "cyberpunk": {
+      "name": "Night City",
+			"bgColor": "#272932",
+			"accentColor": "#EBE300",
+			"textColor1": "#00D5FF",
+      "textColor2": "#000000"
+		},
+    "japanExpo": {
+      "name": "Kawaii",
+			"bgColor": "#FED2EC",
+			"accentColor": "#8C008F",
+			"textColor1": "#000000",
+      "textColor2": "#000000"
+		},
+    "customTheme": {
+      "name": "Personnalisé"
+		}
+	},
+  "catchPhrases": {
+    "satellys": "Avec Hubble vous êtes satellysés 😏",
+    "dua": "Moonlight, you're my, starlight",
+    "spaceship": "Spaceship, spaceship (Na, na, na, na)...",
+    "loremIpsum":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "apagnan": "APAGNAN !",
+    "waiting": "Waiting for the stars to align...",
+    "aldrin": "Le retour sur Terre, c'était la partie la plus difficile. - Buzz Aldrin",
+    "liftoff": "I'm gonna raze the sky~",
+    "themes": "Customisez l'application dans la catégorie 'Thèmes' des paramètres !"
+  },
+  "version":"1.0-beta"
+}

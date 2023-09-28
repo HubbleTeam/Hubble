@@ -1,0 +1,22 @@
+{
+  "name": "Hubble",
+  "short_name": "Hubble",
+  "description": "Une interface plus attrayante pour GPU. Disponible sur tous vos appareils.",
+  "icons": [
+    {
+      "src": "./img/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "fullscreen",
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF"
+}

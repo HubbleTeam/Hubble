@@ -1,0 +1,255 @@
+@use 'vars' as *;
+@use 'header';
+@use 'flyouts';
+@use 'entry';
+@use 'welcome';
+@use 'buttons';
+@use 'splash-screen';
+@use 'sass:math';
+
+
+body {
+  margin: 0;
+  background-color: $bg-color;
+  font: $font-md $fonts;
+}
+
+button, input[type=radio], input[type=checkbox] {
+  cursor: pointer;
+}
+
+input[type=text], select, textarea {
+  padding: $content-xs;
+  border: none;
+  border-radius: $rounded-25;
+  background: $surface-color-2;
+  color: $text-color-1;
+  font: inherit;
+}
+
+select > option {
+  background: $bg-color;
+  color: $text-color-1;
+}
+
+b {
+  font-weight: 600;
+}
+
+#main {
+  position: fixed;
+  overflow-y: scroll;
+  
+  width: $content-full;
+  padding-top: calc($content-lg + $content-xs);
+  height: calc($content-full - $content-lg - $content-xs);
+  scrollbar-color: $surface-color-3 $surface-color-1; /*Forecasting check out the -webkit-scrollbar for now*/
+  p {
+    color: $text-color-1;
+  }
+  
+  > section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: $content-xs-resp;
+  }
+}
+
+#main::-webkit-scrollbar {
+    background-color: $surface-color-1;
+}
+
+#main::-webkit-scrollbar-thumb {
+    background-color: $surface-color-3;
+}
+
+
+#timeline {
+  border-radius: $rounded-50;
+  box-shadow: $shadow;
+  gap: $content-xs;
+  padding: 10px;
+
+  #week-selector {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $content-xs;
+    width: $content-full;
+    
+    span {
+      text-align: center;
+      color: $text-color-1;
+    }
+  }
+
+  #days-selector {
+    display: flex;
+    overflow: auto;
+    gap:$content-2xs;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: $content-lg;
+      height: $content-lg;
+      position: relative;
+      margin: auto;
+      flex-shrink:0;
+  
+      input[type=radio] {
+        border-radius: $rounded-25;
+        margin: 0;
+        appearance: none;
+        -webkit-appearance: none;
+        position: absolute;
+        width: $content-full;
+        height: $content-full;
+        transition: background-color $transition-short;
+        
+        &:hover {
+          background-color: $surface-color-2;
+        }
+        
+        ~ label {
+          z-index: 1;
+          pointer-events: none;
+          font-size: $font-sm;
+          color: $text-color-1;
+        }
+        
+        &:checked {
+          background: $accent-color;
+          
+          ~ label {
+            color: $text-color-2;
+          }
+        }
+      }
+    }
+  }
+}
+
+#main-content {
+  gap: $content-sm;
+
+  #line {
+    position: absolute;
+    left: calc($content-md + $content-3xs);
+    height: $content-full;
+    width: $content-4xs;
+    background-image: linear-gradient(180deg, transparent, transparent 50%, #fff 50%, #fff 100%),
+                      linear-gradient(180deg, transparent, $surface-color-2 5%, $surface-color-2 95%, transparent);
+    background-size: 1px 10px, 1px 100%;
+    border: none;
+    z-index: -1;
+  }
+}
+
+#bg {
+  position: fixed;
+  width: $content-full;
+  height: $content-full;
+  background-color: $surface-color-2;
+  backdrop-filter: $blur-md;
+  -webkit-backdrop-filter: $blur-md;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity $transition-normal;
+
+  div {
+    background-image: url("../img/noise.webp");
+    width: $content-full; height: $content-full;
+    opacity: 0.05;
+  }
+}
+
+
+
+.dot {
+  > div, > p {
+    background: $bg-color;
+    border: dashed 2px $surface-color-2;
+    color: $text-color-1;
+    
+    p {
+      color: $text-color-1;
+    }
+  }
+}
+
+.inactive {
+  > div, > p {
+    background: $bg-color;
+    color: $text-color-1;
+    border: solid 2px $surface-color-2;
+    
+    p {
+      color: $text-color-1;
+    }
+  }
+}
+
+.active {
+  > div, > p {
+    background: $accent-color;
+    color: $text-color-2 !important;
+    border: none;
+    
+    > p {
+      color: $text-color-2;
+    }
+    
+    > div:first-of-type {
+      background-color: white;
+      color: black;
+    }
+  }
+}
+
+.toast {
+  gap: $content-sm;
+  position: fixed;
+  align-items: center;
+  display: flex;
+  padding: $content-sm;
+  z-index: 5;
+  max-width: 80%;
+  text-align: center;
+  width: max-content;
+  top: $content-full;
+  left: math.div($content-full, 2);
+  transform: translateX(math.div(-$content-full, 2));
+  transition: top $transition-normal;
+  color: $text-color-2;
+  border-radius: $rounded-25;
+  box-shadow: $shadow;
+}
+
+.pp {
+  height: $content-xl;
+  width: $content-xl;
+  flex-shrink: 0;
+  background-color: $surface-color-2;
+  border-radius: $rounded-100;
+  object-fit:cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  i {
+    font-size: $font-xl;
+  }
+}
+
+.beta-label {
+  background-color: $accent-color;
+  padding: $content-2xs;
+  border-radius: $rounded-75;
+  color: $text-color-2;
+  font-size: $font-xs;
+  margin: $content-xs;
+}

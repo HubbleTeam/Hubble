@@ -1,0 +1,120 @@
+@use 'vars' as *;
+
+#welcome {
+  position: fixed;
+  width: $content-full;
+  height: $content-full;
+  background-color: $accent-color;
+  display: flex;
+  flex-direction: column;
+  z-index: 4;
+  top: 0;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+  box-sizing: border-box;
+
+  #welcome-content {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    flex-grow: 1;
+
+    /* -- PAGE -- */
+
+    > div {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      color: $text-color-2;
+      box-sizing: border-box;
+      width: $content-full;
+      flex-shrink: 0;
+      
+      p > i {
+        font-size: $font-lg;
+        vertical-align: middle;
+      }
+      
+      img {
+        width: 100px;
+      }
+
+      h1, p {
+        text-align: center;
+      }
+      
+      a {
+        color: white;
+      }
+      
+      > div {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .themess {
+        gap: 10px;
+        overflow-y: scroll;
+        height: 0px;
+        justify-content: initial;
+
+        > div > div {
+          width: 200px;
+          height: 200px;
+          border-radius: 10px;
+          background-color: white;
+          overflow: hidden;
+          
+          > header {
+            position: relative;
+            width: 100%;
+            height: $content-md;
+            background-color: $surface-color-1;
+            
+            > div {
+              height: $content-sm;
+              width: $content-sm;
+              border-radius: $rounded-25;
+              background: blue;
+              position: absolute;
+              right: $content-xs;
+              top: $content-xs;
+            }
+          }
+          
+          > main {
+            > section {
+              border-radius: $rounded-25;
+              box-shadow: $shadow;
+              height: $content-md;
+              margin: $content-sm;
+            }
+          }
+        }
+      }
+
+      form {
+        label {
+          display: block;
+          font-size: $font-sm;
+          color: lightgray;
+        }
+
+        input[type="text"] {
+          background-color: white;
+        }
+      }
+    }
+  }
+}
+
+
+
+#welcome-footer {
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  transition: opacity 0.25s;
+}

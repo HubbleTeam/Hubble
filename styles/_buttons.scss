@@ -1,0 +1,211 @@
+@use 'vars' as *;
+
+.switch {
+  position: relative;
+  
+  > input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 64px;
+    height: 32px;
+    background-color: lightgray;
+    border-radius: $rounded-100;
+    margin: 0;
+    transition: background-color 0.3s ease-in-out;
+    
+    &:active ~ div {
+      left: 6px;
+      width: 42px;
+    }
+    
+    &:checked {
+      background-color: $accent-color;
+    }
+    
+    &:checked ~ div {
+      left: 38px;
+      width: 20px;
+    }
+
+    &:checked:active ~ div {
+      left: 16px;
+      width: 42px;
+    }
+  }
+  
+  > div {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: $rounded-100;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    transition: left 0.3s ease-in-out, width 0.3s ease-in-out;
+    pointer-events: none;
+    box-shadow: $shadow;
+  }
+}
+
+
+.theme-switch {
+  background-color: $accent-color;
+  border-radius: $rounded-100;
+  display: flex;
+  padding: 5px;
+  gap: 5px;
+/*   height: min-content; */
+  
+  div {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    input[type="radio"] {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border-radius: $rounded-100;
+      appearance: none;
+      -webkit-appearance: none;
+      transition: background-color 0.5s;
+      
+      &:hover {
+        background-color: $surface-color-2;
+      }
+      
+      &:checked {
+        background-color: white;
+        box-shadow: $shadow;
+        
+        ~ i {
+          color: black;
+          transform: rotate(360deg);
+        }
+      }
+    }
+    
+    i {
+      color: $text-color-2;
+      pointer-events: none;
+      transition: transform $transition-short;
+    }
+  }
+}
+
+
+
+#welcome button {
+  background-color: yellow;
+  border-radius: $rounded-25;
+  color: black;
+  padding: $content-xs;
+  margin: $content-sm;
+  box-shadow: $shadow;
+  border: none; /* override buttons border */
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.btn-border {
+  background: none; /* override buttons bg color */
+  border-radius: $rounded-100;
+  padding: $content-2xs;;
+  border: solid 1px $surface-color-2;
+  transition: background-color $transition-short;
+  color: $text-color-1;
+
+  > i {
+    font-size: $font-xl;
+  }
+
+  &:hover {
+    background-color: $surface-color-2;
+  }
+}
+
+.btn-transparent {
+  background: none; /* override buttons bg color */
+  border: none; /* override buttons border */
+  text-decoration: none; /* when using link style*/
+  color: $text-color-1;
+  padding: $content-2xs;
+  
+  i {
+    font-size: $font-lg;
+  }
+}
+
+.btn-fill {
+  background: none; /* override buttons bg color */
+  border: none; /* override buttons border */
+  font: inherit; /* is forced for buttons on most browsers */
+  text-align: left; /* is center for buttons on most browsers */
+  position: relative;
+  color: $text-color-1;
+  width: $content-full;
+  padding: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $content-sm;
+  box-sizing: border-box;
+  
+  > input[type="checkbox"] {
+    position: absolute;
+    width: $content-full;
+    height: $content-full;
+    top: 0;
+    left: 0;
+    margin: 0;
+    appearance: none;
+/*     z-index:-1; */
+  }
+  
+/*   span {
+    width: 100%;
+  } */
+  
+  i {
+    font-size: $font-lg;
+  }
+  
+  .switch {
+    pointer-events: none;
+  }
+  
+  &:hover {
+    /* Add a grey background color on mouse-over */
+    background-color: $surface-color-2;
+  }
+}
+
+.btn-accent {
+  border: none; /* override buttons border */
+  display: flex;
+  align-items: center;
+  background: $accent-color;
+  border-radius: $rounded-25;
+  padding: $content-xs;
+  transition: box-shadow $transition-short;
+  color: $text-color-2;
+  gap: $content-xs;
+  font-family: inherit; /* is forced for buttons on most browsers */
+  font-size: $font-md; /* override buttons font-size */
+/*   align-self: center; */
+
+  > i {
+    font-size: $font-md;
+  }
+
+  &:hover {
+    box-shadow: 0px 3px 5px $accent-color;
+  }
+}

@@ -1,0 +1,54 @@
+@use 'vars' as *;
+
+.entry {
+  display: flex;
+  align-items: center;
+  gap: $content-sm;
+  position: relative;
+  width: $content-full;
+  
+  p {
+    margin: 0px;
+  }
+  
+  > p {
+    border-radius: $rounded-100;
+    width: $content-xl;
+    padding: $content-2xs 0px $content-2xs 0px;
+    text-align: center;
+    font-size: $font-sm;
+    flex-shrink: 0;
+  }
+
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: $rounded-50;
+    gap: $content-xs;
+    padding: 10px;
+    flex-grow: 1;
+/*     box-shadow:$shadow; */
+
+    > div {
+      display: flex;
+      padding: $content-3xs 0px $content-3xs 0px;
+      flex-grow: 1;
+      background-color: $surface-color-1;
+      color: $text-color-1;
+      border-radius: $rounded-25;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 5px;
+
+      i {
+        font-size: 1.25rem;
+      }
+      
+      > div {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+  }
+}

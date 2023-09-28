@@ -1,0 +1,47 @@
+<div id="report" class="flyout">
+  <div class="flyout-page">
+    <div class="flyout-header">
+      <i class="ph-duotone ph-bug"></i>
+      <h2>Signaler un bug</h2>
+      
+      <button aria-label="Fermer" onclick="switchPanel($('#report'),'close')" class="btn-border"><i class="ph ph-x"></i></button>
+    </div>
+ 
+    <div>
+      <div>
+        <label for="email">Adresse e-mail</label>
+        <input type="text" id="emailReport" name="email" placeholder="Entrez votre adresse e-mail" required>
+      </div>
+
+      <br>
+      
+      <div>
+        <label for="sujet">Sujet<sup>*</sup></label>
+        <input type="text" id="sujetReport" name="sujet" placeholder="Entrez le sujet du bug" required>
+      </div>
+      
+      <br>
+      
+      <div>
+        <label for="description">Description du bug<sup>*</sup></label>
+        <textarea rows="8" id="descriptionReport" name="description" placeholder="Décrivez le bug que vous avez rencontré" required></textarea>
+      </div>
+
+      <br>
+      
+      <div>
+        <p><sup>*</sup>Champs obligatoires</p>
+      
+<button id="sendButton" onclick="sendReport()" class="btn-accent">
+  <b>Envoyer</b>
+  <i class="ph ph-paper-plane-tilt"></i>
+</button>
+
+<div id="loader" style="display: none;">
+  <i class="ph ph-hourglass-medium"></i>Envoi en cours...
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+

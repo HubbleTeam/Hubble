@@ -1,0 +1,1 @@
+Les données suivantes seront collectées lors de l'envoi d'un formulaire de rapport de bug afin d'empêcher les spams : Nom, Adresse e-mail

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+# Autoriser l'indexation du fichier index.html
+Allow: /index.html

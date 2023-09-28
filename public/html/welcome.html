@@ -1,0 +1,67 @@
+<div id="welcome">
+  <div id="welcome-content">
+    <div>
+      <h1>Bienvenue sur Hubble !</h1>
+      <div>
+        <p>Pour commencer, ajustons l'app à vos goûts.</p>  
+
+        <img src="./img/rocket-dynamic-color.webp" alt="fusée">
+
+        <button class="btn-fill" id="lngBtn"> 
+          <p>
+            <b>Langue</b>
+            <br>
+            Hola señor !
+          </p>
+          <select name="" id="languageSel"></select>
+        </button>
+
+        <button onclick="welcomeNav('left')">C'EST PARTI !</button>
+        <button href="#" onclick="switchPanel($('#welcome'), 'close')" id="welcomeDebug"><i class="ph ph-x"></i> (DEBUG)</button>
+      </div>
+    </div>
+  
+    <div>
+      <h1>Entrez votre identifiant</h1>
+
+      <div>
+        <form>
+          <label for="identifiant">Identifiant GPU</label>
+          <input type="text" id="identifiant" name="identifiant">
+        </form>
+
+        <a id="openPwdButton" href="#">J'ai changé de mot de passe</a>
+
+        <form id="passwordForm" style="display: none;">
+          <label for="password">Mot de passe</label>
+          <input type="text" id="password" name="password" placeholder="Défaut: 123">
+        </form>
+      </div>
+    </div>
+  
+    <div>
+      <h1>Choisissez un thème</h1>
+
+      <div class="themess"></div>
+    </div>
+    
+    <div>
+      <h1>Une dernière chose...</h1>
+      <div>
+        <p>
+          Hubble a besoin de votre aide ! Cette première itération peut comporter quelques bugs. Merci de nous les signaler à travers le formulaire de rapport de bug <i class="ph ph-bug"></i> ou bien en nous contactant directement par mail à <a href="mailto:hubble.app@proton.me">hubble.app@proton.me</a>.
+        </p>
+      </div>
+    </div>
+  
+    <div>
+      <h1>Vous êtes prêts !</h1>
+      <img src="./img/crow-dynamic-color.webp" alt="couronne">
+    </div>
+  </div>
+
+  <div id="welcome-footer">
+    <button id="left-arrow" aria-label="Flèche de gauche" onclick="welcomeNav('right')"><i class="ph-fill ph-arrow-left"></i></button>
+    <button id="next-arrow" aria-label="Flèche de droite" onclick="welcomeNav('left')" disabled>SUIVANT</button>
+  </div> 
+</div>

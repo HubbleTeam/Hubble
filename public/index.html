@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Une interface plus attrayante pour GPU. Disponible sur tous vos appareils.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="./app.webmanifest">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+    <!--     <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://md-block.verou.me"> -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nova+Square:wght@400&display=swap">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/duotone/style.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/fill/style.css">
+    
+    <!--     <script src="https://cdn.jsdelivr.net/npm/zepto@1.2.0/dist/zepto.min.js"></script> -->
+    <script src="./js/sw-registerer.js"></script>
+    <script src="https://unpkg.com/pulltorefreshjs@0.1.22/dist/index.umd.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/front.js"></script>
+    <script src="./js/themes.js"></script>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+    
+    <meta name="theme-color" content="#0069FF">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta property="og:image" content="./img/favicon.png"/>
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+    
+    <title>Hubble</title>
+  </head>
+  
+  <body>
+    <div id="splash-screen">
+      <div>
+        <h1>Hubble</h1>
+        <p></p>
+      </div>
+      <div>
+        <svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M208 32H184V24C184 21.8783 183.157 19.8434 181.657 18.3431C180.157 16.8429 178.122 16 176 16C173.878 16 171.843 16.8429 170.343 18.3431C168.843 19.8434 168 21.8783 168 24V32H88V24C88 21.8783 87.1571 19.8434 85.6569 18.3431C84.1566 16.8429 82.1217 16 80 16C77.8783 16 75.8434 16.8429 74.3431 18.3431C72.8429 19.8434 72 21.8783 72 24V32H48C43.7565 32 39.6869 33.6857 36.6863 36.6863C33.6857 39.6869 32 43.7565 32 48V208C32 212.243 33.6857 216.313 36.6863 219.314C39.6869 222.314 43.7565 224 48 224H208C212.243 224 216.313 222.314 219.314 219.314C222.314 216.313 224 212.243 224 208V48C224 43.7565 222.314 39.6869 219.314 36.6863C216.313 33.6857 212.243 32 208 32ZM208 208H48V80H208V208Z" fill="white"/>
+        </svg>
+        <svg class="spinnincircle" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="12.5" r="12.5" fill="#FFF"/>
+          <circle cx="87.5" cy="50" r="12.5" fill="#FFF" />
+          <circle cx="50" cy="87.5" r="12.5" fill="#FFF" />
+          <circle cx="12.5" cy="50" r="12.5" fill="#FFF" />
+        </svg>
+      </div>
+    </div>
+    
+    <div id="bg" onclick="closeAll()">
+      <div></div>
+    </div>
+    
+    <header id="header">
+      <div>
+        <a href="#"><img id="headericon" src="./img/logo.webp" alt="Logo Hubble"></a>
+        <button aria-label="Ouvrir le menu" onclick="nav('open')" class="btn-transparent"><i class="ph ph-list"></i></button>
+      </div>
+      
+      
+      <nav id="myLinks">
+        <div id="nav-header">
+          <span id="short-name" class="pp"><i class="ph ph-user"></i></span>
+          <p id="student-name"><b>DECONNECTE</b></p>
+          <button name="Se déconnecter" onclick="logout()" class="btn-transparent"><i class="ph ph-sign-out"></i></button>
+        </div>
+        
+        <button class="main-link btn-fill" onclick="switchPanel($('#settings'), 'open')" id="settings-btn">
+          <i class="ph ph-gear-six"></i>
+          <span>Paramètres</span>
+        </button>
+
+        <div id="nav-footer">
+          <div>
+            <button onclick="switchPanel($('#welcome'), 'open')" style="color:var(--accent-color);" class="btn-transparent">
+              <i class="ph ph-hand-waving"></i>
+            </button>
+            <button onclick="navigator.share({url: 'https://hubbledt.glitch.me/#'})" class="btn-transparent">
+              <i class="ph ph-share-network"></i>
+            </button>
+            <button onclick="switchPanel($('#whatsnew'),'open')" class="btn-transparent">
+              <i class="ph ph-megaphone"></i>
+            </button>
+            <button onclick="switchPanel($('#about'),'open')" class="btn-transparent">
+              <i class="ph ph-info"></i>
+            </button>
+            <button onclick="switchPanel($('#report'), 'open')" class="btn-transparent">
+              <i class="ph ph-bug"></i>
+            </button>
+            <a href="mailto:hubble.app@proton.me" class="btn-transparent">
+              <i class="ph ph-envelope"></i>
+            </a>
+          </div>
+
+          <hr>
+
+          <div class="theme-switch">
+            <div>
+              <input type="radio" name="theme-switch" id="lightRadio" value="lightTheme">
+              <i class="ph-fill ph-sun"></i>
+            </div>
+            <div>
+              <input type="radio" name="theme-switch" id="darkRadio" value="darkTheme">
+              <i class="ph-fill ph-moon"></i>
+            </div>
+            <div>
+              <input type="radio" name="theme-switch" id="systemRadio" value="systemTheme">
+              <i class="ph-fill ph-devices"></i>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <main id="main">
+      <section id="timeline">
+        <div id="week-selector">
+          <button onclick="changeWeek('previous')" aria-label="Semaine précédente" class="btn-border"><i class="ph ph-caret-left"></i></button>
+          <span id="week-indicator"></span>
+          <button onclick="changeWeek('next')" aria-label="Semaine suivante" class="btn-border"><i class="ph ph-caret-right"></i></button>
+        </div>
+        <div id="days-selector">
+          <div>
+            <input type="radio" class="day" name="day" aria-label="Lundi" value=0>
+            <label>LUN</label>
+            <label><b></b></label>
+          </div>
+          <div>
+            <input type="radio" class="day" name="day" aria-label="Mardi" value=1>
+            <label>MAR</label>
+            <label><b></b></label>
+          </div>
+          <div>
+            <input type="radio" class="day" name="day" aria-label="Mercredi" value=2>
+            <label>MER</label>
+            <label><b></b></label>
+          </div>
+          <div>
+            <input type="radio" class="day" name="day" aria-label="Jeudi" value=3>
+            <label>JEU</label>
+            <label><b></b></label>
+          </div>
+          <div>
+            <input type="radio" class="day" name="day" aria-label="Vendredi" value=4>
+            <label>VEN</label>
+            <label><b></b></label>
+          </div>
+          <div>
+            <input type="radio" class="day" name="day" aria-label="Samedi" value=5>
+            <label>SAM</label>
+            <label><b></b></label>
+          </div>
+        </div>
+      </section>
+      
+      <section id="main-content">
+        <hr id=line>
+        <p></p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+<div id="about" class="flyout">
+  <div class="flyout-page">
+    <div class="flyout-header">
+      <i class="ph-duotone ph-info"></i>
+      <h2>À propos</h2>
+      
+      <button aria-label="Fermer" onclick="switchPanel($('#about'),'close')" class="btn-border"><i class="ph ph-x"></i></button>
+    </div>
+  
+    <div class="flyout-content">
+      <div>
+        <img src="https://cdn.glitch.global/7ed579fb-1d9c-4094-9d28-e52d65f8a515/Frame%205%20(1).png?v=1682955087658" alt="logo Hubble">
+        <b>Version <span id="version"></span></b>
+        <p>
+          Une interface plus attrayante pour GPU. Disponible sur tous vos appareils.
+          <a href="https://hubble.kyriiix.moe/">https://hubble.kyriiix.moe/</a>
+          <a href="https://hubble.alwaysdata.net/">https://hubble.alwaysdata.net/</a>
+        </p>
+      </div>
+      
+      <div>
+        <h3>Créé par</h3>
+        
+        <div id="authors">
+          <div class="author-details">
+            <img src="/img/pp.webp" class="pp" alt="Photo de Alexis">
+            <p>
+              <b>Alexis Piekarz</b>
+              <br>
+              Backend, Implémentation
+            </p>
+            <div>
+              <a href="https://github.com/Alaixs" target="_blank"><i class="ph-fill ph-github-logo"></i></a>
+            </div>
+          </div>
+
+          <div class="author-details">
+            <img src="/img/charrier.webp" class="pp" alt="Photo de Jonechiasse">
+            <p>
+              <b>Jonas Charrier</b>
+              <br>
+              Backend, Implémentation
+            </p>
+            <div>
+              <a href="https://github.com/EarthKiii" target="_blank"><i class="ph-fill ph-github-logo"></i></a>
+            </div>
+          </div>
+
+          <div class="author-details">
+  <!--           <img src="./img/pp.webp" class="pp" alt="Photo de Kyrian"> -->
+            <span class="pp"><i class="ph ph-user"></i></span>
+            <p>
+              <b>KyriiiX</b>
+              <br>
+              Frontend
+            </p>
+            <div>
+              <a href="https://github.com/KyriiiX" target="_blank"><i class="ph-fill ph-github-logo"></i></a>
+              <a href="https://kyriiix.moe" target="_blank"><i class="ph-fill ph-globe"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h3>Plus d'infos</h3>
+        
+        <div>
+          <button class="btn-fill" onclick="moveThemeFlyout(1)" id="third-party-btn">
+            <p>
+              <b>Logiciels tierces</b>
+            </p>
+            <i class="ph ph-caret-right"></i>
+          </button>
+
+          <button class="btn-fill" onclick="moveThemeFlyout(2)" id="mentions">
+            <p>
+              <b>Mentions légales</b>
+            </p>
+            <i class="ph ph-caret-right"></i>
+          </button>
+
+          <button class="btn-fill" onclick="moveThemeFlyout(3)" id="privacy-policy">
+            <p>
+              <b>Politique de confidentialité</b>
+            </p>
+            <i class="ph ph-caret-right"></i>
+          </button>
+        </div>
+        
+        <p id="license">
+          <i class="ph ph-scroll"></i>Licence: MIT - <a href="#">Voir la licence</a>
+        </p>
+        
+        <p id="made-with-love">Fait avec ❤️ à Nantes et Poitiers</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="flyout-page">
+    <div class="flyout-header">
+      <button aria-label="Retour" class="btn-border" onclick="moveThemeFlyout(0)"><i class="ph ph-caret-left"></i></button>
+      
+      <div>
+        <i class="ph-duotone ph-scroll"></i>
+        <h3>Logiciels tierces</h3>
+      </div>
+    </div>
+  
+    <div class="flyout-content">
+<!--       <i class="ph-duotone ph-phosphor-logo"></i> -->
+      <h3>Phosphor Icons</h3>
+      <a href="https://phosphoricons.com/" target="_blank">https://phosphoricons.com/</a>
+      <p>Under the <a href="https://raw.githubusercontent.com/phosphor-icons/homepage/master/LICENSE" target="_blank">MIT License</a>.</p>
+      
+      <br>
+      
+      <h3>PulltoRefresh.js</h3>
+      <a href="https://www.boxfactura.com/pulltorefresh.js/" target="_blank">https://www.boxfactura.com/pulltorefresh.js/</a>
+      <p>Under the <a href="https://raw.githubusercontent.com/BoxFactura/pulltorefresh.js/master/LICENSE.txt" target="_blank">MIT License</a>.</p>
+      
+      <br>
+      
+      <h3>3Dicons</h3>
+      <a href="https://3dicons.co/" target="_blank">https://3dicons.co/</a>
+      <p>Under the <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">CC0 License</a>.</p>
+    </div>
+  </div>
+  
+  <div class="flyout-page">
+    <div class="flyout-header">
+      <button aria-label="Retour" class="btn-border" onclick="moveThemeFlyout(0)"><i class="ph ph-caret-left"></i></button>
+      
+      <div>
+        <i class="ph-duotone ph-scroll"></i>
+        <h3>Mentions légales</h3>
+      </div>
+    </div>
+  
+    <div class="flyout-content">
+      <md-block src="./mentions.md"></md-block>
+    </div>
+  </div>
+  
+  <div class="flyout-page">
+    <div class="flyout-header">
+      <button aria-label="Retour" class="btn-border" onclick="moveThemeFlyout(0)"><i class="ph ph-caret-left"></i></button>
+      
+      <div>
+        <i class="ph-duotone ph-scroll"></i>
+        <h3>Politique de confidentialité</h3>
+      </div>
+    </div>
+  
+    <div class="flyout-content">
+      <md-block src="./privacyPolicy.md"></md-block>
+    </div>
+  </div>
+</div>

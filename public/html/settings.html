@@ -1,0 +1,183 @@
+<div id="settings" class="flyout">
+  <div id="global-settings" class="flyout-page">
+    <div class="flyout-header">
+      <i class="ph-duotone ph-gear-six"></i>
+      <h2>Paramètres</h2>
+      
+      <button aria-label="Fermer" onclick="switchPanel($('#settings'),'close')" class="btn-border"><i class="ph ph-x"></i></button>
+    </div>
+    
+    <div class="flyout-content">
+      <!--     <button class="btn-fill">
+        <p>
+          <b>Ajouter un compte</b>
+          <br>
+          Vous n'êtes pas tout seul ?
+        </p>
+        <i class="ph ph-plus"></i>
+      </button> -->
+      
+      <button class="btn-fill" id="lngBtn"> 
+        <p>
+          <b>Langue</b>
+          <br>
+          Hola señor !
+        </p>
+        <select name="" id="languageSel"></select>
+      </button>
+      
+      <button class="btn-fill" onclick="moveThemeFlyout(1)" id="themesBtn">
+        <p>
+          <b>Thèmes</b>
+          <br>
+          Envie de customisation ? C'est ici.
+        </p>
+        <i class="ph ph-caret-right"></i>
+      </button>
+
+      <div class="btn-fill" id="ecoBtn">
+        <input type="checkbox" id="ecoMode">
+        <p>
+          <b>Mode éco</b>
+          <br>
+          Des problèmes de performance ? Ça peut aider.
+        </p>
+        <div class="switch">
+          <input type="checkbox" id="ecoCheck" aria-label="Switch éco mode">
+          <div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="btn-fill" id="notifBtn">
+        <input type="checkbox" id="notifSwitch">
+        <p>
+          <b>Notifications</b>
+          <br>
+          Soyez alerté des cours.
+        </p>
+        <div class="switch">
+          <input type="checkbox" id="notifCheck" aria-label="Switch notification">
+          <div>
+          </div>
+        </div>
+      </div>
+      
+      <button class="btn-fill" onclick="moveThemeFlyout(2)" id="debugBtn">
+        <p>
+          <b>DEBUG</b>
+          <br>
+          ^^
+        </p>
+        <i class="ph ph-caret-right"></i>
+      </button>
+
+      <hr>
+
+      <div class="btn-fill" id="cacheBtn">
+        <p>
+          <b>Cache</b>
+          <br>
+          Si l'app dysfonctionne, vous pouvez vider le cache. Cela ne vous déconnectera pas.
+        </p>
+        <button onclick="clearCache()" class="btn-accent"><i class="ph ph-trash"></i><b>Vider</b></button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="theme-settings" class="flyout-page">
+    <div class="flyout-header">
+      <button aria-label="Retour" class="btn-border" onclick="moveThemeFlyout(0)"><i class="ph ph-caret-left"></i></button>
+      
+      <div>
+        <i class="ph-duotone ph-paint-bucket"></i>
+        <h3>Thèmes</h3>
+      </div>
+    </div>
+    
+    <div class="flyout-content">
+      <div>
+        <div>
+          <label for="theme-select">Thème</label>
+          <select name="theme-select" id="theme-select"></select>
+        </div>
+      </div>
+      
+      <div id="#color-pickers">
+        <div>
+          <label for="bg-picker">Couleur de fond</label>
+          <input type="color" id="bg-picker" name="bg-picker">
+          <button id="bg-picker-revert" class="btn-transparent">
+            <i class="ph ph-arrow-counter-clockwise"></i>
+          </button>
+        </div>
+
+        <div>
+          <label for="accent-picker">Couleur d'accent</label>
+          <input type="color" id="accent-picker" name="accent-picker">
+          <button id="accent-picker-revert" class="btn-transparent">
+            <i class="ph ph-arrow-counter-clockwise"></i>
+          </button>
+        </div>
+
+        <div>
+          <label for="text-picker">Couleur du texte</label>
+          <input type="color" id="text-picker" name="text-picker">
+          <button id="text-picker-revert" class="btn-transparent">
+            <i class="ph ph-arrow-counter-clockwise"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div>
+        <div>
+          <label for="font-selector">Police</label>
+          <select name="font-selector" id="font-selector"></select>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div id="debug-settings" class="flyout-page">
+    <div class="flyout-header">
+      <button aria-label="Retour" class="btn-border" onclick="moveThemeFlyout(0)"><i class="ph ph-caret-left"></i></button>
+      
+      <div>
+        <i class="ph-duotone ph-alien"></i>
+        <h3>DEBUG</h3>
+      </div>
+    </div>
+    
+    <div class="flyout-content">
+      <button class="btn-fill">
+        <p>
+          <b>Welcome remove</b>
+          <br>
+          Remove the welcome experience when user is logged in.
+          <br>
+          Requires restart to disable.
+        </p>
+        <div class="switch">
+          <input type="checkbox" id="welcomeRemove">
+          <div>
+          </div>
+        </div>
+      </button>
+      
+      <button class="btn-fill">
+        <p>
+          <b>Welcome debug button remove</b>
+          <br>
+          Remove the debug button on welcome first page.
+          <br>
+          Requires restart to disable.
+        </p>
+        <div class="switch">
+          <input type="checkbox" id="welcomeDebugRemove">
+          <div>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>

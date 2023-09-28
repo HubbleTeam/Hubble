@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rapport de Bug</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet"/>
+    <style>
+      body {
+        background-color: #333;
+        color: #fff;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      img {
+        height: 23vw;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .response {
+        background-color: #444;
+        padding: 20px;
+        border-radius: 5px;
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+
+      p {
+        margin: 10px 0;
+      }
+
+      #description {
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  
+  <body class="dark-mode">
+    <div class="container">
+      <img src="https://hubbledt.glitch.me/assets/svg/icon.svg" />
+      <h1>Rapport de Bug</h1>
+      <div class="response">
+        <p>
+          <strong>Nom :</strong>
+          <span id="nom">${name}</span>
+        </p>
+        <p>
+          <strong>E-mail :</strong>
+          <span id="email">${email}</span>
+        </p>
+        <p>
+          <strong>Sujet :</strong>
+          <span id="sujet">${sujet}</span>
+        </p>
+        <p>
+          <strong>Description :</strong>
+        </p>
+        <p id="description">${description}</p>
+      </div>
+    </div>
+  </body>
+</html>
