@@ -20,20 +20,8 @@ async function startup() {
   }
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   // --- FONTS ---
   
-  // find Google Fonts in the document
   function findGoogleFonts() {
     const linkElements = document.querySelectorAll('link[rel="stylesheet"]');
     const fontFamilies = [];
@@ -95,18 +83,6 @@ async function startup() {
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   // change theme on theme dropdown value change
   $("#theme-select").addEventListener("change", function () {
     changeTheme(this.value);
@@ -139,8 +115,9 @@ async function startup() {
   updateInit(selectedTheme);
 }
 
-function themeSelectorTemplate(themeName, bgColor, accentColor) {
+function themeSelectorTemplate(themeName, bgColor, accentColor, key) {
   return `<div style="background: ${bgColor};">
+            <input hidden value="${key}">
             <header>
               <div style="background: ${accentColor};">
 
@@ -182,13 +159,16 @@ function themesWelcome() {
     
     if (key === "systemTheme") {
       if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        holder.innerHTML = themeSelectorTemplate(themeName, db.colorSchemes["darkTheme"].bgColor, db.colorSchemes["darkTheme"].accentColor);
+        holder.innerHTML = themeSelectorTemplate(themeName, db.colorSchemes["darkTheme"].bgColor, db.colorSchemes["darkTheme"].accentColor, "darkTheme");
       } else {
-        holder.innerHTML = themeSelectorTemplate(themeName, db.colorSchemes["lightTheme"].bgColor, db.colorSchemes["lightTheme"].accentColor);
+        holder.innerHTML = themeSelectorTemplate(themeName, db.colorSchemes["lightTheme"].bgColor, db.colorSchemes["lightTheme"].accentColor, "lightTheme");
       }
     } else {
-      holder.innerHTML = themeSelectorTemplate(themeName, db.colorSchemes[key].bgColor, db.colorSchemes[key].accentColor);
+      holder.innerHTML = themeSelectorTemplate(themeName, db.colorSchemes[key].bgColor, db.colorSchemes[key].accentColor, key);
     }
+    holder.addEventListener("click", (e) => {
+      changeTheme(e.currentTarget.getElementsByTagName("input")[0].value);
+    });
     
     $(".themess").appendChild(holder);
   }

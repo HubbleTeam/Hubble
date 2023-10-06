@@ -1,3 +1,7 @@
+.env
 .glitchdotcom.json
+.black-list.json
+.glitch-assets
+.wget-hsts
 .node-gyp
 node_modules

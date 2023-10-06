@@ -5,6 +5,4 @@
    - https://www.alwaysdata.com/
    
  - **KyriiiX**
-   - https://kyriiix.moe
-   
- - **Alaix**
+   - https://kyriiix.moe/

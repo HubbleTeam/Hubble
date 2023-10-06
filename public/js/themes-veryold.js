@@ -1,10 +1,9 @@
-// Load the JSON file as a module
 import data from '../db.json' assert {type: 'json'};
 
-// Parse the JSON data
+
 const parsedData = JSON.parse(JSON.stringify(data));
 
-// Use the parsed data
+
 console.log(parsedData);
 
 let selectedTheme;
@@ -27,7 +26,7 @@ function startup() {
     option.text = db.colorSchemes[key].name;
     option.value = key;
     themeSelectorElm.appendChild(option);
-  } //cette partie c bon
+  }
   
   themeSelectorElm.addEventListener('change', function(){
     localStorage.setItem('selectedTheme', themeSelectorElm.value);
