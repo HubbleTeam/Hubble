@@ -369,6 +369,8 @@ async function fetchEdt(day, week) {
   const array = await fetch(`/edt?id=${window.localStorage.currentStudentID}&week=${week}&passwd=${window.localStorage.currentStudentPassword}`)
     .then(response => response.json());
   
+  console.log("edt fetheeeed")
+  
   clearLessons();
   idCounter = 0;
   // deleteCacheEntry("/edt");
@@ -482,7 +484,6 @@ function initPullToRefresh() {
     mainElement: timeline,
     triggerElement: main,
     async onRefresh() {
-      deleteSession();
       deleteCacheEntry("/edt");
       const week = parseInt($("#week-selector").dataset.week);
       const radioDay = $(".day:checked").value;
