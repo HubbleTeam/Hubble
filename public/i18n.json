@@ -1,7 +1,8 @@
 {
   "languages": {
     "fr": {
-      "name": "Français 🇫🇷",
+      "name": "FR",
+      "countryName": "France",
       "settings": "Paramètres",
       "week": "Semaine",
       "noLesson": "Aucun cours",
@@ -46,7 +47,8 @@
       "coffeeBreak": "Pause café"
     },
     "en": {
-      "name": "English 🇬🇧 - OLD",
+      "name": "EN - OLD",
+      "countryName": "United-Kingdo",
       "settings": "Settings",
       "week": "Week",
       "noLesson": "No lesson",
@@ -91,7 +93,8 @@
       "coffeeBreak": "Coffee break"
     },
     "ht": {
-      "name": "Kreyòl Ayisyen 🇭🇹",
+      "name": "HT",
+      "countryName": "Haiti",
       "settings": "Anviwònman",
       "week": "Semèn",
       "noLesson": "Pa gen leson",

@@ -643,21 +643,39 @@ function lngInject(text) {
 }
 
 function lngSelect() {
-  const languageSelectElements = $A("#languageSel");
+  const languageSelectElements = $A("#lng-selector > div");
   
   languageSelectElements.forEach(languageSelect => {
     for (const key of Object.keys(i18n.languages)) {
-      let option = document.createElement("option");
-      option.text = i18n.languages[key].name;
-      option.value = key;
-      languageSelect.appendChild(option);
+      let label = document.createElement("label");
+      label.innerHTML = `
+        <span>${i18n.languages[key].name}</span>
+        <img src="https://icons.iconarchive.com/icons/icondrawer/flags/48/${i18n.languages[key].countryName}-icon.png" alt="">
+        <input type="radio" name="lnginput" value=${key}>
+      `
+      languageSelect.appendChild(label);
     }
-
-    languageSelect.addEventListener("change", function () {
-      localStorage.setItem("selectedLng", this.value);
-      selectedLng = this.value;
-      lngSet();
-    });
+    
+    const initialValue = $(`#lng-selector > summary`);
+    
+    initialValue.innerHTML = `
+      <span>${i18n.languages[selectedLng].name}</span>
+      <img src="https://icons.iconarchive.com/icons/icondrawer/flags/48/${i18n.languages[selectedLng].countryName}-icon.png" alt="">
+    `;
+    
+    const inputs = $A(`#lng-selector > div > label > input[type="radio"]`);
+    
+    inputs.forEach(input => {
+      input.addEventListener("change", function () {
+        localStorage.setItem("selectedLng", this.value);
+        selectedLng = this.value;
+        initialValue.innerHTML = `
+        <span>${i18n.languages[this.value].name}</span>
+        <img src="https://icons.iconarchive.com/icons/icondrawer/flags/48/${i18n.languages[this.value].countryName}-icon.png" alt="">
+      `;
+        lngSet();
+      });
+    })
     
     languageSelect.value = selectedLng;
   });

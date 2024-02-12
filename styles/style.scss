@@ -253,3 +253,80 @@ b {
   font-size: $font-xs;
   margin: $content-xs;
 }
+
+#lng-selector {
+    // padding: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+    direction: rtl;
+    z-index: 2;
+
+    summary {
+        // display: flex;
+        // align-items: center;
+        // gap: 5px;
+        padding: 10px;
+
+        img {
+            width: 24px;
+            vertical-align: middle;
+        }
+
+        span {
+            margin-inline: 5px;
+        }
+    }
+
+    > div {
+        box-sizing: border-box;
+        position: absolute;
+        width: 100%;
+        background-color: white;
+        padding: 5px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+
+        label {
+            position: relative;
+/*             display: flex; */
+            // align-items: center;
+            border-radius: 10px;
+            padding: 5px;
+            justify-content: space-evenly;
+            background-color: rgba(0, 0, 0, 0.1);
+    
+            img {
+                width: 24px;
+                vertical-align: middle;
+            }
+    
+            input[type="radio"] {
+                appearance: none;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+    
+                &:checked {
+                    // background-color: red;
+                }
+            }
+        }
+    }
+}
+
+#lng-selector[open] {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background: white;
+    box-shadow: $shadow;
+  
+    > div {
+      box-shadow: $shadow;
+    }
+}
